@@ -1,0 +1,3 @@
+<?php echo $__env->make('backend.settings.site.partials.fields._level', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<textarea class="form-control" name="<?php echo e($field['key']); ?>" id="<?php echo e($field['key']); ?>"  rows="6"><?php echo e(setting($field['key'],$field['value'])); ?></textarea>
+<?php /**PATH /Users/apple/Documents/gratech/resources/views/backend/settings/site/partials/fields/textarea.blade.php ENDPATH**/ ?>
