@@ -13,9 +13,11 @@ return new class extends Migration
     {
         if (!Schema::hasTable('messages')) {
             Schema::create('messages', function (Blueprint $table) {
-                $table->id();
-                $table->foreignId('admin_id')->nullable()->constrained();
-                $table->foreignId('ticket_id')->constrained();
+                $table->increments('id');
+                $table->unsignedInteger('admin_id'); // Match users.id type
+                $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
+                $table->unsignedInteger('ticket_id'); // Match users.id type
+                $table->foreign('ticket_id')->references('id')->on('tickets')->onDelete('cascade');
                 $table->string('message');
                 $table->string('attachment')->nullable();
                 $table->timestamps();

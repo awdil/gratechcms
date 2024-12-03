@@ -1,2 +1,0 @@
-<div class="mouse-cursor cursor-outer"></div>
-<div class="mouse-cursor cursor-inner"></div><?php /**PATH /Users/apple/Documents/gratech/resources/views/frontend/layouts/partials/_cursor.blade.php ENDPATH**/ ?>

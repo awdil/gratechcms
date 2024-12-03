@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->increments('id');
+            $table->unsignedInteger('user_id'); // Match users.id type
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('txid')->nullable();
             $table->text('description')->nullable();
             $table->string('method')->nullable();

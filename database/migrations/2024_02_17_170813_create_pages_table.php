@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //`is_breadcrumb` tinyint(1) 
         if (!Schema::hasTable('pages')) {
             Schema::create('pages', function (Blueprint $table) {
-                $table->id();
+                $table->increments('id');
+                $table->tinyInteger('is_breadcrumb')->default(1);
                 $table->string('title');
                 $table->string('slug')->unique();
                 $table->text('component_id');

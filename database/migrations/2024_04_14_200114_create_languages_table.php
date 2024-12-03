@@ -13,7 +13,7 @@ return new class extends Migration
     {
         if (!Schema::hasTable('languages')) {
             Schema::create('languages', function (Blueprint $table) {
-                $table->id();
+                $table->increments('id');
                 $table->string('name');
                 $table->string('code');
                 $table->boolean('is_default')->default(0);

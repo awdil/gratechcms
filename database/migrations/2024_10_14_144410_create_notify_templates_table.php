@@ -9,14 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
     public function up(): void
     {
+
         Schema::create('notify_templates', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('icon')->nullable();
             $table->string('name');
+            $table->string('code')->nullable();
+            $table->string('info')->nullable();
             $table->string('type');
             $table->string('subject')->nullable();
-            $table->text('message');
+            $table->text('push_message');
+            $table->text('mail_message');
             $table->text('variables');
             $table->boolean('mail_status')->default(0);
             $table->boolean('push_status')->default(1);

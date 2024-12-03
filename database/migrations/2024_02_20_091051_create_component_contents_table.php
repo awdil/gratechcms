@@ -13,8 +13,9 @@ return new class extends Migration
     {
         if (!Schema::hasTable('component_contents')) {
             Schema::create('component_contents', function (Blueprint $table) {
-                $table->id();
-                $table->unsignedInteger('component_id');
+                $table->increments('id');
+                $table->unsignedInteger('component_id')->nullable();
+                 $table->unsignedInteger('category_id')->nullable();
                 $table->longText('content')->nullable();
                 $table->timestamps();
             });

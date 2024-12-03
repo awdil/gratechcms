@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('blog_categories', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->text('name');
             $table->boolean('is_active')->default(1);
             $table->timestamps();

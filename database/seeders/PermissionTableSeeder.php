@@ -124,7 +124,7 @@ class PermissionTableSeeder extends Seeder
         Permission::insert($permissions->toArray());
 
         // Create or retrieve the super-admin role
-        $superRole = Role::firstOrCreate(['guard_name' => 'admin', 'name' => 'super-admin']);
+        $superRole = Role::firstOrCreate(['guard_name' => 'admin', 'name' => 'super-admin', 'description' => 'Super admin description']);
 
         // Assign all permissions to the super-admin role
         $superRole->givePermissionTo(Permission::all());

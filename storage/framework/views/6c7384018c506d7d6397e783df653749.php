@@ -1,3 +1,0 @@
-<?php echo $__env->make('backend.settings.site.partials.fields._level', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<input class="form-control tags-evs" name="<?php echo e($field['key']); ?>"  id="email" type="text" value="<?php echo e(setting($field['key'],$field['value'])); ?>">
-<?php /**PATH /Users/apple/Documents/gratech/resources/views/backend/settings/site/partials/fields/tag.blade.php ENDPATH**/ ?>

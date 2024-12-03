@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('order_id')->constrained();
+            $table->increments('id');
+            $table->unsignedInteger('order_id'); // Match users.id type
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->text('assigned_to')->nullable();
             $table->string('name');
             $table->text('description')->nullable();

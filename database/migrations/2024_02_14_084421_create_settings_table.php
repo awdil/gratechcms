@@ -13,7 +13,7 @@ return new class extends Migration
     {
          if (!Schema::hasTable('settings')) {
             Schema::create('settings', function (Blueprint $table) {
-                $table->id();
+                $table->increments('id');
                 $table->string('key')->unique();
                 $table->string('val');
                 $table->string('type')->default('string');

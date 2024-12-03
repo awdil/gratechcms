@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payment_gateways', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('logo')->nullable();
             $table->string('name');
             $table->string('code')->comment('Code for payment gateway e.g. paypal, stripe, razorpay');

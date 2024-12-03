@@ -1,20 +1,0 @@
-<div class="modal fade" id="addBalanceModal" tabindex="-1" aria-labelledby="addBalanceModalLabel"     aria-hidden="true">    <div class="modal-dialog modal-dialog-centered">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title" id="addBalanceModalLabel">  <?php echo e(__('Add or Subtract Balance')); ?></h5>                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>            </div>            <div class="modal-body">                <form action="<?php echo e(route('admin.users.balance-update')); ?>" method="POST">                    <?php echo csrf_field(); ?>                    <input type="hidden" name="user_id" value="<?php echo e($user->id); ?>">                    <div class="mb-3">                        <label class="form-label" for="type"><?php echo e(__('Type')); ?></label>                        <select class="form-select" id="type" name="type" aria-label="Default select example">                            <?php $__currentLoopData = \App\Constants\BalanceUpdateType::TYPES; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>                                <option value="<?php echo e($type); ?>"><?php echo e(ucfirst($type)); ?></option>                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                        </select>                    </div>                    <div class="mb-3">                        <label class="form-label" for="amount"><?php echo e(__('Amount')); ?></label>                        <div class="input-group mb-3">                            <input type="text" oninput="this.value = validateDouble(this.value)" class="form-control" id="amount"                                   name="amount" required>                            <span class="input-group-text"><?php echo e(setting('site_currency')); ?></span>                        </div>                    </div>                    <div class="d-flex justify-content-end mt-3">                        <button type="submit" class="btn btn-info "><?php if (isset($component)) { $__componentOriginalce262628e3a8d44dc38fd1f3965181bc = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalce262628e3a8d44dc38fd1f3965181bc = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.icon','data' => ['name' => 'check','height' => '20']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('icon'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['name' => 'check','height' => '20']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalce262628e3a8d44dc38fd1f3965181bc)): ?>
-<?php $attributes = $__attributesOriginalce262628e3a8d44dc38fd1f3965181bc; ?>
-<?php unset($__attributesOriginalce262628e3a8d44dc38fd1f3965181bc); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalce262628e3a8d44dc38fd1f3965181bc)): ?>
-<?php $component = $__componentOriginalce262628e3a8d44dc38fd1f3965181bc; ?>
-<?php unset($__componentOriginalce262628e3a8d44dc38fd1f3965181bc); ?>
-<?php endif; ?> <?php echo e(__('Update Balance')); ?></button>                    </div>                </form>            </div>        </div>    </div></div><?php /**PATH /Users/apple/Documents/gratech/resources/views/backend/user/partial/_add_balance_modal.blade.php ENDPATH**/ ?>
